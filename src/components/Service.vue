@@ -56,7 +56,7 @@
             <el-row class="content tabAside">
                 <el-tabs :tab-position="tabPosition">
                     <el-tab-pane label="企业首页">企业首页</el-tab-pane>
-                    <el-tab-pane label="云卷申领" class="el-icon-magic-stick">
+                    <el-tab-pane label="云卷申领">
                         云卷申领
                     </el-tab-pane>
                     <el-tab-pane label="订单中心">订单中心</el-tab-pane>
@@ -72,7 +72,8 @@
                             <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="120px"
                                 class="demo-ruleForm">
                                 <el-form-item label="投诉或建议内容" prop="content">
-                                    <el-input class="inputLen" type="textarea" v-model="ruleForm.content" :rows="6"></el-input>
+                                    <el-input class="inputLen" type="textarea" v-model="ruleForm.content"
+                                        :rows="6"></el-input>
                                 </el-form-item>
                                 <el-form-item label="添加图片">
                                     <el-upload action="https://jsonplaceholder.typicode.com/posts/" list-type="picture-card"
@@ -111,8 +112,8 @@
                     <div class="grid-content pro">
                         <div class="myIcon"></div>
                         <div class="footerIntro">
-                            <h4>商家资质认证</h4>
-                            <p>严格筛选服务商，提供品质服务</p>
+                            <h4>交易过程安全</h4>
+                            <p>服务完成，再付款给服务商务</p>
                         </div>
                     </div>
                 </el-col>
@@ -120,8 +121,8 @@
                     <div class="grid-content pro">
                         <div class="myIcon"></div>
                         <div class="footerIntro">
-                            <h4>商家资质认证</h4>
-                            <p>严格筛选服务商，提供品质服务</p>
+                            <h4>价格更优惠</h4>
+                            <p>先领券再消费，为企业带来实惠</p>
                         </div>
                     </div>
                 </el-col>
@@ -140,21 +141,21 @@
                             </ul>
                         </div>
                         <div class="footerItem">
-                            <h5>关于平台</h5>
+                            <h5>交易保障</h5>
                             <ul class="footerItemCon">
-                                <li>关于我们</li>
-                                <li>平台特色</li>
-                                <li>法律声明</li>
-                                <li>联系方式</li>
+                                <li>安全保障</li>
+                                <li>交易流程</li>
+                                <li>风险监控</li>
+                                <li>信息安全</li>
                             </ul>
                         </div>
                         <div class="footerItem">
-                            <h5>关于平台</h5>
+                            <h5>帮助中心</h5>
                             <ul class="footerItemCon">
-                                <li>关于我们</li>
-                                <li>平台特色</li>
-                                <li>法律声明</li>
-                                <li>联系方式</li>
+                                <li>新手教程</li>
+                                <li>意见反馈</li>
+                                <li>常见问题</li>
+                                <li>用户协议</li>
                             </ul>
                         </div>
                     </div>
@@ -163,15 +164,14 @@
                     <div class="grid-content contact">
                         <div class="myIcon"></div>
                         <div class="footerIntro">
-                            <h4>商家资质认证</h4>
-                            <p>严格筛选服务商，提供品质服务</p>
+                            <h4>4006-200-200</h4>
+                            <p>服务时间:工作日09:00-22:00</p>
                         </div>
                     </div>
                     <div class="grid-content contact">
                         <div class="myIcon"></div>
                         <div class="footerIntro">
-                            <h4>商家资质认证</h4>
-                            <p>严格筛选服务商，提供品质服务</p>
+                            <h4>kefu@ourqq.cn</h4>
                         </div>
                     </div>
                 </el-col>
@@ -366,7 +366,8 @@ export default {
             .btn {
                 width: 150px;
             }
-            .inputLen{
+
+            .inputLen {
                 width: 50%;
             }
         }
@@ -409,18 +410,33 @@ export default {
 }
 
 .pro {
-    /* padding: 0 10px; */
 
+    /* padding: 0 10px; */
+    h4 {
+        font-size: 16px;
+        font-weight: 700;
+        margin-bottom: 5px;
+    }
+
+    p {
+        font-size: 14px;
+        margin-top: -2px;
+    }
 }
 
 .footerIntro {
     padding: 10px;
+    h4 {
+        font-size: 16px;
+        font-weight: 700;
+        margin-bottom: 5px;
+    }
+    p {
+        font-size: 14px;
+        margin-top: -2px;
+    }
 }
 
-.footerIntro h4 {
-    font-size: 18px;
-    font-weight: 700;
-}
 
 li {
     list-style-type: none;
@@ -446,7 +462,9 @@ li {
 
 .contact {
     display: flex;
-    justify-content: end;
+    justify-content: start;
+
+    margin-left: 20px;
 }
 
 .erweimaList {
@@ -471,7 +489,22 @@ li {
     }
 }
 
-/deep/.el-tabs--left .el-tabs__item.is-left{
+/deep/.el-tabs--left .el-tabs__item.is-left {
     text-align: left;
+}
+
+#tab-1:after{
+    content:'- Remember this';
+    background-color:yellow;
+    color:red;
+    font-weight:bold;
+}
+/deep/.el-tabs__nav:nth-child(2)::after{
+    content:"";
+    background-color:yellow;
+    color:red;
+    font-weight:bold;
+    width: 10px;
+    height: 10px;
 }
 </style>
